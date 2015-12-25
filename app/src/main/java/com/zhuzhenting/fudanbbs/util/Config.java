@@ -28,7 +28,8 @@ public class Config {
     public static final String DELETEMAIL_URL = "bbs/delmail";
     public static final String BOA_ID_URL = "bbs/boa?s=";
     public static final String BOA_NAME_URL = "bbs/boa?board=";
-    public static final String BID_URL = "bbs/tcon?new=1&bid=";
+    public static final String BID_URL = "bbs/con?new=1&bid=";
+    public static final String TBID_URL = "bbs/tcon?new=1&bid=";
     public static final String BOARD_URL = "bbs/tcon?new=1&board=";
     public static final String MOD_TRA_URL = "bbs/doc";
     public static final String MOD_THEME_URL = "bbs/tdoc";

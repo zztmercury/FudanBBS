@@ -38,4 +38,7 @@
     <string name="post">提交</string>
     <string name="sending">正在发送</string>
     <string name="sending_success">发送成功</string>
+    <string name="reply">回复</string>
+    <string name="reply_success">回复成功</string>
+    <string name="edit_article">编辑文章</string>
 </resources>

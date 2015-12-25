@@ -49,11 +49,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        holder.tvBoaTitle.setText(boaMap.get(Integer.toHexString(position).toUpperCase()));
+        final String title = boaMap.get(Integer.toHexString(position).toUpperCase());
+        holder.tvBoaTitle.setText(title);
         holder.tvBoaTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, BoaActivity.class);
+                i.putExtra("title",title);
                 i.putExtra("dir", false);
                 i.putExtra("input", Integer.toHexString(position).toUpperCase());
                 context.startActivity(i);

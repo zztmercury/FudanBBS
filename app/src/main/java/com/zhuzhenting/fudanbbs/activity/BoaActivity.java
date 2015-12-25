@@ -52,6 +52,8 @@ public class BoaActivity extends BaseActivity {
     protected void bindDatas() {
         isDir = getIntent().getBooleanExtra("dir", false);
         input = getIntent().getStringExtra("input");
+        String title = getIntent().getStringExtra("title");
+        setTitle(title);
     }
 
     private void loadData() {

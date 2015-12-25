@@ -81,6 +81,7 @@ public class BoaAdapter extends RecyclerView.Adapter<BoaAdapter.ViewHolder> {
                 } else {
                     i.setClass(context, PostActivity.class);
                 }
+                i.putExtra("title",boaInfo.getDesc());
                 i.putExtra("input", boaInfo.getTitle());
                 context.startActivity(i);
             }

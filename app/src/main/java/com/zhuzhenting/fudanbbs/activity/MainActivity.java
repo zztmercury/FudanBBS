@@ -23,6 +23,7 @@ import com.zhuzhenting.fudanbbs.R;
 import com.zhuzhenting.fudanbbs.beans.ServerReport;
 import com.zhuzhenting.fudanbbs.constant.UrlConfig;
 import com.zhuzhenting.fudanbbs.fragment.HomeFragment;
+import com.zhuzhenting.fudanbbs.fragment.MyFavFragment;
 import com.zhuzhenting.fudanbbs.fragment.TopTopicFragment;
 import com.zhuzhenting.fudanbbs.servlet.Servlet;
 import com.zhuzhenting.fudanbbs.util.Support;
@@ -166,6 +167,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_my_collection:
                 if (getSupportActionBar() != null)
                     getSupportActionBar().setTitle(R.string.my_collection);
+                ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_root, new MyFavFragment(), "MyFavFragment");
+                ft.commit();
                 break;
             case R.id.action_logout:
                 new AsyncTask<Void, Void, ServerReport>() {

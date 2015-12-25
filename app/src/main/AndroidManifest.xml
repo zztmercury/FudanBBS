@@ -23,7 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity">
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/login">
 
         </activity>
         <activity android:name=".activity.BoaActivity">
@@ -35,7 +37,9 @@
         <activity android:name=".activity.PostActivity">
 
         </activity>
-        <activity android:name=".activity.ArticleEditerActivity">
+        <activity
+            android:name=".activity.ArticleEditerActivity"
+            android:label="@string/edit_article">
 
         </activity>
     </application>

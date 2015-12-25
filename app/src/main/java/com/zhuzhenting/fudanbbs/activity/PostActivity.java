@@ -3,6 +3,7 @@ package com.zhuzhenting.fudanbbs.activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -25,7 +26,7 @@ import java.util.List;
 /**
  * Created by zzt on 15-12-24.
  */
-public class PostActivity extends BaseActivity {
+public class PostActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
     private RecyclerView recyclerView;
     private PostAdapter mAdapter;
     private String input;
@@ -34,12 +35,13 @@ public class PostActivity extends BaseActivity {
     private String TAG = "PostActivity";
     private RecyclerView.LayoutManager mLayoutManager;
     private boolean isLoadingMore = false;
+    private SwipeRefreshLayout refreshView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.layout_recycler);
+        setContentView(R.layout.refresh_layout_recycler);
 
         bindViews();
         bindDatas();
@@ -56,6 +58,13 @@ public class PostActivity extends BaseActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new PostAdapter(this);
         recyclerView.setAdapter(mAdapter);
+        refreshView = (SwipeRefreshLayout) findViewById(R.id.refresh_view);
+        refreshView.setColorSchemeResources(
+                android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+        refreshView.setOnRefreshListener(this);
     }
 
     @Override
@@ -84,6 +93,8 @@ public class PostActivity extends BaseActivity {
     protected void bindDatas() {
         input = getIntent().getStringExtra("input");
         startIndex = -1;
+        String title = getIntent().getStringExtra("title");
+        setTitle(title);
     }
 
     private void loadData() {
@@ -159,5 +170,11 @@ public class PostActivity extends BaseActivity {
                 super.onPostExecute(serverReport);
             }
         }.execute();
+    }
+
+    @Override
+    public void onRefresh() {
+        startIndex=-1;
+        loadData();
     }
 }

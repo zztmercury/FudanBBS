@@ -233,7 +233,7 @@ public class Post {
         String theme_url = "";
         try {
             int bid = Integer.parseInt(board);
-            theme_url = Config.BID_URL + bid;
+            theme_url = Config.TBID_URL + bid;
         } catch (Exception e) {
             theme_url = Config.BOARD_URL + board;
         }

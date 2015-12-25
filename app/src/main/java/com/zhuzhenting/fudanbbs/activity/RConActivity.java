@@ -14,7 +14,7 @@ import com.zhuzhenting.fudanbbs.widget.DividerItemDecoration;
 /**
  * Created by zzt on 15-12-23.
  */
-public class RConActivity extends BaseActivity {
+public class RConActivity extends BaseActivity implements RConAdapter.OnReplySuccessListener{
     private RecyclerView recyclerView;
     private RConAdapter mAdapter;
     private String gid, bid;
@@ -43,13 +43,16 @@ public class RConActivity extends BaseActivity {
 
     @Override
     protected void bindListeners() {
-
+        mAdapter.setOnReplySuccessListener(this);
     }
 
     @Override
     protected void bindDatas() {
         gid = getIntent().getStringExtra("gid");
         bid = getIntent().getStringExtra("bid");
+        mAdapter.setBid(bid);
+        String title = getIntent().getStringExtra("title");
+        setTitle(title);
     }
 
     private void loadData() {
@@ -66,5 +69,10 @@ public class RConActivity extends BaseActivity {
                 mAdapter.notifyDataSetChanged();
             }
         }.execute();
+    }
+
+    @Override
+    public void onReplySuccess() {
+        loadData();
     }
 }

@@ -13,12 +13,6 @@
             android:title="@string/my_collection"/>
     </group>
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/user_setting"
-            android:title="@string/user_setting"/>
-    </group>
-
     <item
         android:id="@+id/action_logout"
         android:title="@string/logout"/>

@@ -60,6 +60,7 @@ public class TopTopicAdapter extends RecyclerView.Adapter<TopTopicAdapter.ViewHo
                 Intent i = new Intent(context, RConActivity.class);
                 i.putExtra("gid", topInfo.getGid());
                 i.putExtra("bid", topInfo.getBoard());
+                i.putExtra("title",topInfo.getTitle());
                 context.startActivity(i);
             }
         });
