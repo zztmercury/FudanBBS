@@ -14,7 +14,7 @@ import com.zhuzhenting.fudanbbs.widget.DividerItemDecoration;
 /**
  * Created by zzt on 15-12-23.
  */
-public class RConActivity extends BaseActivity implements RConAdapter.OnReplySuccessListener{
+public class RConActivity extends BaseActivity implements RConAdapter.OnReplySuccessListener {
     private RecyclerView recyclerView;
     private RConAdapter mAdapter;
     private String gid, bid;

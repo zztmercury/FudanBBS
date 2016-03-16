@@ -85,6 +85,11 @@ public class RConAdapter extends RecyclerView.Adapter<RConAdapter.ViewHolder> {
         });
     }
 
+    @Override
+    public int getItemCount() {
+        return rConInfos.size();
+    }
+
     private void reply(RConInfo rCon, String content) {
         final RConInfo rConInfo = new RConInfo();
         rConInfo.setBid(bid);
@@ -108,17 +113,16 @@ public class RConAdapter extends RecyclerView.Adapter<RConAdapter.ViewHolder> {
         }.execute();
     }
 
-    @Override
-    public int getItemCount() {
-        return rConInfos.size();
-    }
-
     public void setOnReplySuccessListener(OnReplySuccessListener onReplySuccessListener) {
         this.onReplySuccessListener = onReplySuccessListener;
     }
 
     public void setBid(String bid) {
         this.bid = bid;
+    }
+
+    public interface OnReplySuccessListener {
+        void onReplySuccess();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -133,9 +137,5 @@ public class RConAdapter extends RecyclerView.Adapter<RConAdapter.ViewHolder> {
             tvDate = (TextView) itemView.findViewById(R.id.text_date);
             btnReply = (Button) itemView.findViewById(R.id.btn_reply);
         }
-    }
-
-    public interface OnReplySuccessListener {
-        void onReplySuccess();
     }
 }

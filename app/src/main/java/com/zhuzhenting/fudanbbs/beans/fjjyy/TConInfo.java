@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 同一主题所有贴子信息
  * rList: 回复贴列表
- * <p/>
+ * <p>
  * 当前页面非主题帖首页时，mainCon中仅fid有数据
  */
 public class TConInfo {

@@ -24,10 +24,11 @@ import java.util.List;
 public class MyFavFragment extends Fragment {
     private RecyclerView recyclerView;
     private MyFavAdapter mAdapter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.layout_recycler,container,false);
+        View rootView = inflater.inflate(R.layout.layout_recycler, container, false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), R.drawable.default_divider));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));

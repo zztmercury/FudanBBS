@@ -63,7 +63,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 Intent i = new Intent(context, RConActivity.class);
                 i.putExtra("gid", postInfo.getId());
                 i.putExtra("bid", bid);
-                i.putExtra("title",postInfo.getTitle());
+                i.putExtra("title", postInfo.getTitle());
                 context.startActivity(i);
             }
         });

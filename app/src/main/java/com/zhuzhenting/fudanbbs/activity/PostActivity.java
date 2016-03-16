@@ -174,7 +174,7 @@ public class PostActivity extends BaseActivity implements SwipeRefreshLayout.OnR
 
     @Override
     public void onRefresh() {
-        startIndex=-1;
+        startIndex = -1;
         loadData();
     }
 }

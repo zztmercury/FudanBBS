@@ -42,7 +42,7 @@ public class MyFavAdapter extends RecyclerView.Adapter<MyFavAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_fav,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_fav, parent, false);
         return new ViewHolder(v);
     }
 
@@ -54,8 +54,8 @@ public class MyFavAdapter extends RecyclerView.Adapter<MyFavAdapter.ViewHolder> 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, PostActivity.class);
-                i.putExtra("title",favSec.getDesc());
-                i.putExtra("input",favSec.getName());
+                i.putExtra("title", favSec.getDesc());
+                i.putExtra("input", favSec.getName());
                 context.startActivity(i);
             }
         });
@@ -68,6 +68,7 @@ public class MyFavAdapter extends RecyclerView.Adapter<MyFavAdapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvTitle;
+
         public ViewHolder(View itemView) {
             super(itemView);
             tvTitle = (TextView) itemView.findViewById(R.id.tv_title);

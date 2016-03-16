@@ -55,7 +55,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, BoaActivity.class);
-                i.putExtra("title",title);
+                i.putExtra("title", title);
                 i.putExtra("dir", false);
                 i.putExtra("input", Integer.toHexString(position).toUpperCase());
                 context.startActivity(i);
